@@ -5,11 +5,12 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "equipos")
 public class Equipo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @Column(nullable = false, unique = true)
     private String nombre;
@@ -27,11 +28,14 @@ public class Equipo {
         this.pais = pais;
     }
 
-    public Long getId() {
+    public Equipo(String nombre) {
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
