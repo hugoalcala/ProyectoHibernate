@@ -9,7 +9,7 @@ public class Jugador {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @Column(nullable = false)
     private String nombre;
@@ -29,6 +29,9 @@ public class Jugador {
         this.equipo = equipo;
     }
 
+    public Jugador(String nombre, int posicion, int idEquipo) {
+    }
+
     public Equipo getEquipo() {
         return equipo;
     }
@@ -37,11 +40,11 @@ public class Jugador {
         this.equipo = equipo;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

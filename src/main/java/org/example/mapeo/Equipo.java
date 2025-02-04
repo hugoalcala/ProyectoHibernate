@@ -1,6 +1,5 @@
 package org.example.mapeo;
 
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,6 +9,7 @@ public class Equipo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
     @Column(nullable = false, unique = true)
@@ -26,9 +26,6 @@ public class Equipo {
     public Equipo(String nombre, String pais) {
         this.nombre = nombre;
         this.pais = pais;
-    }
-
-    public Equipo(String nombre) {
     }
 
     public int getId() {
@@ -69,8 +66,6 @@ public class Equipo {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", pais='" + pais + '\'' +
-                ", jugadores=" + jugadores +
                 '}';
     }
 }
-
